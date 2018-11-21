@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>患者列表</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <style>
+       table,table tr th, table tr td { border:1px solid #0094ff; }
+        table {  text-align: center; border-collapse: collapse; padding:2px;} 
+         </style>
+    </head>
+    <body>
+       
+        <table border="1">
+            <tr >
+                <td>ID</td><td>姓名</td><td>别名</td><td>性别</td><td>手机号码</td><td>注册时间</td>
+            </tr>
+        {% for patient in patients %}
+        <tr>
+            <td>{{patient.id}}</td>
+            <td>{{patient.name}}</td>
+            <td>{{patient.nick_name}}</td>
+            <td>{{patient.gender}}</td>
+            <td>{{patient.telephone}}</td>
+            <td>{{patient.regist_at}}</td>
+            
+        </tr>
+        
+        {% endfor %}
+        
+        </table>
+        <p>
+            现在时间{{now}}
+        </p>
+        <p>
+            <a href="/">返回</a>
+        </p>
+    </body>
+</html>

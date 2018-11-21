@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %} 欢迎光临 {% endblock %}
+{% block content %}
+现在时间{{now}}
+ <div>
+            <p><a href="patient/add">注册</a></p> 
+            <p><a href="patient/sign_in">签到</a></p>
+            <p><a href="patient/pay">付款</a></p>
+            <p><a href="patient/list">
+                列表
+                </a></p>
+        </div> 
+{% endblock %}
+    
