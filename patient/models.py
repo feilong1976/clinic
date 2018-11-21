@@ -20,6 +20,10 @@ class Patient(models.Model):
     class Meta:
         verbose_name = '患者信息'
         verbose_name_plural = '患者信息'
+    def create_family(self)::
+        family = Family()
+        family.owner=self
+        
     
     def __unicode__(self):
         return self.name 
@@ -31,6 +35,11 @@ class Family(models.Model):
     
     class Meta:
         verbose_name=u'会员卡'
+
+class FamilyMember(models.Model):
+    family = models.ForeignKey(Family,on_delete=models.CASCADE)
+    member= models.ForeignKey(Patient,on_delete=models.CASCADE)
+    relation =models.CharField(max_length=30,null=False)
   
 class  Appointment(models.Model):
     patient =models.ForeignKey(Patient,on_delete=models.CASCADE)
